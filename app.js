@@ -29,6 +29,7 @@ app.use(`${api}/courses`, coursesRoutes);
 app.use(`${api}/students`, studentRoutes);
 
 
+
 //create database connection before starting server
 mongoose.connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
