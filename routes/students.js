@@ -1,8 +1,10 @@
 const {Student} = require('../models/student');
 const express = require('express');
 const router = express.Router();
+const validationMiddleware = require('../middleware/validation-middleware');
 
-router.post('/', async (req,res)=>{
+
+router.post('/',validationMiddleware.student, async (req,res)=>{
     let student = new Student({
         name: req.body.name,
         code: req.body.code,

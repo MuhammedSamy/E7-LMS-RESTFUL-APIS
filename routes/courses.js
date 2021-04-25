@@ -1,8 +1,9 @@
 const {Course} = require('../models/course');
 const express = require('express');
 const router = express.Router();
+const validationMiddleware = require('../middleware/validation-middleware');
 
-router.post('/', async (req,res)=>{
+router.post('/', validationMiddleware.course, async (req,res)=>{
     let course = new Course({
         name: req.body.name,
         code: req.body.code,

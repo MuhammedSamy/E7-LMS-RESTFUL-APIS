@@ -8,7 +8,8 @@ const cors = require('cors');
 const api = process.env.API_URL;
 const url = process.env.DATABASE_URL;
 
-// const errorHandler = require("./helpers/error-handler");
+// const errorHandler = require("./middleware/error-handler");
+
 
 //routes
 const coursesRoutes = require('./routes/courses');
