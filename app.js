@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const api = process.env.API_URL;
+const url = process.env.DATABASE_URL;
 
 // const errorHandler = require("./helpers/error-handler");
 
@@ -31,7 +32,7 @@ app.use(`${api}/students`, studentRoutes);
 
 
 //create database connection before starting server
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     dbName:'LMS-DB'
