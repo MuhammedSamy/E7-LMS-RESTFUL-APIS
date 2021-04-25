@@ -31,7 +31,7 @@ app.use(`${api}/students`, studentRoutes);
 
 
 //create database connection before starting server
-mongoose.connect(process.env.CONNECTION_STRING, {
+mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     dbName:'LMS-DB'
